@@ -12,3 +12,4 @@
   - More complexe Routings
   - Customizing a survey appearance and controls
 ## API Reference
+  - The complete description of the resources, endpoints, parameters and returned objects 
