@@ -2,7 +2,7 @@
 ## Introduction
 - [Overview](intro-overview.md)
 - [Authentification](intro-authentification.md)
-- Errors and error handling
+- [Errors and error handling](intro-error.md)
 ## Quick start
 - Authentification
 - Get user’s Surveys
