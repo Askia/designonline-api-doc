@@ -1,8 +1,8 @@
 # Design Online API
 ## Introduction
-Overview
-Authentification
-Errors and error handling
+- Overview
+- Authentification
+- Errors and error handling
 ## Quick start
 - Authentification
 - Get user’s Surveys
