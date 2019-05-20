@@ -9,7 +9,7 @@
 ## Guides
 - [Creating a simple survey with basic Routing (survey logic)](guide-create-survey.md)
 - Loops
-- More complexe Routings
+- More complex Routings
 - Customizing a survey appearance and controls
 ## API Reference
 - The complete description of the resources, endpoints, parameters and returned objects
