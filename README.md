@@ -4,8 +4,8 @@
 - [Authentification](intro-authentification.md)
 - [Errors and error handling](intro-error.md)
 ## Quick start
-- Authentification
-- Get user’s Surveys
+- Authentification (Authentification is a work in progress in DO API, please refer to [authentification introduction](intro-authentification.md))
+- [Getting surveys](gstart-getsurveys.md)
 ## Guides
 - Creating a simple survey with basic Routing (survey logic)
 - Loops
