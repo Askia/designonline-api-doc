@@ -24,980 +24,280 @@ This is an example of the
 - **defaultMessage** : the default message of the error regardless of the choosen language for the platform
 
 
-## Application error list
-
-  ItemNotFound: Unable to find the entity in the Askia Design database.,
-
-  UnableToGenerateSurveyFromSurveyTemplate:  Unable to create a survey from a survey template.
-
-  UnableToCreateSurveyFromAskiaCore: Unable to create the survey in AskiaCore.
-
-
-        /// <summary>
-        ///   Unable to a survey with the AskiaCore.
-        ///   (Code: 50002)
-        /// </summary>
-        UnableToDeleteSurveyFromAskiaCore,
-
-        /// <summary>
-        ///   Unable to save the survey in the Askia Design database.
-        /// </summary>
-        UnableToSaveSurveyInDesignDatabase,
-
-        /// <summary>
-        ///   Unable to change the survey DefaultPageTemplateId .
-        /// </summary>
-        UnableChangeSurveyDefaultPageTemplateId,
-
-	    /// <summary>
-	    /// The input string could not be converted to a SurveyDto.
-	    /// </summary>
-	    UnableToDeserialiseSurveyInput,
-
-	    /// <summary>
-	    ///   Unable to set the survey `Name`.
-	    /// </summary>
-	    UnableToSetSurveyName,
-
-		/// <summary>
-		///   Unable to set the survey `DefaultLanguageId`.
-		/// </summary>
-	    UnableToSetSurveyDefaultLanguageId,
-
-		/// <summary>
-		///   Unable to set the survey `DefaultPageTemplateId`.
-		/// </summary>
-		UnableToSetSurveyDefaultPageTemplateId,
-
-	    /// <summary>
-	    ///   Unable to set the survey `PageTemplateProperties`.
-	    /// </summary>
-	    UnableToSetSurveyPageTemplateProperties,
-
-	    /// <summary>
-	    ///   Unable to set the survey `ThemeProperties`.
-	    /// </summary>
-	    UnableToSetSurveyThemeProperties,
-
-	    /// <summary>
-	    /// The resources for the survey could not be extracted.
-	    /// </summary>
-	    SurveyExtractResourcesFailure,
-
-		/// <summary>
-		/// The HTTP request is required to contain a file but none was found.
-		/// </summary>
-		SurveyNoFileInRequest,
-
-	    /// <summary>
-	    /// The HTTP request is required to contain a file. The file is present but is empty.
-	    /// </summary>
-	    SurveyLanguageTextsFileEmptyInRequest,
-
-
-		/// <summary>
-		/// An error occured while trying to access the file stream for the survey language texts.
-		/// </summary>
-		SurveyLanguageTextsFileNotReadable,
-
-		/// <summary>
-		/// An error occurred when trying to create a sub-survey based on a question in the existing survey.
-		/// </summary>
-	    UnableToCreateSubSurveyFromQuestion,
-
-		/// <summary>
-		/// Unable to move the routings.
-		/// </summary>
-		SurveyMoveRoutingsFailure,
-
-		/// <summary>
-		/// Unable to save the routings.
-		/// </summary>
-		UnableToSaveRoutingsInDesignDatabase,
-		#endregion
-
-		#region Scenario
-		/// <summary>
-		///   Unable to save the scenario in the Askia Design database.
-		/// </summary>
-		UnableToSaveScenarioInDesignDatabase,
-
-	    /// <summary>
-	    ///   Unable to create the scenario in AskiaCore.
-	    /// </summary>
-	    UnableToCreateScenarioFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to delete the scenario in AskiaCore.
-	    /// </summary>
-	    UnableToDeleteScenarioFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to set the scenario `Name`.
-	    /// </summary>
-	    UnableToSetScenarioName,
-
-		/// <summary>
-		/// AskiaCore rejected the supplied scenario name.
-		/// </summary>
-		ScenarioNameInvalid,
-		/// <summary>
-		/// AskiaCore rejected the supplied scenario name as non-unique.
-		/// </summary>
-		ScenarioNameNotUnique,
-	    #endregion
-
-		#region ScenarioEntity
-		/// <summary>
-		///   Unknow scenario entity type.
-		/// </summary>
-		UnknownScenarioEntityType,
-
-	    /// <summary>
-	    ///   Unable to create the scenario entity in AskiaCore.
-	    /// </summary>
-	    UnableToCreateScenarioEntityFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to create the scenario entity in AskiaCore.
-	    /// </summary>
-	    UnableToSaveScenarioEntityFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to delete the scenario entity in AskiaCore.
-	    /// </summary>
-	    UnallowedToUpdateScenarioEntityFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to delete the scenario entity in AskiaCore.
-	    /// </summary>
-	    UnableToDeleteScenarioEntityFromAskiaCore,
-	    #endregion
-
-	    #region Question
-		/// <summary>
-		/// Unable to find the question in the Askia Design database.
-		/// </summary>
-		QuestionNotFoundInDesignDatabase,
-
-		/// <summary>
-		/// Unable to delete the question in AskiaCore.
-		/// </summary>
-	    UnableToDeleteQuestionFromAskiaCore,
-
-        /// <summary>
-        /// Question.PrevSiblingId was assigned a value instead of null.
-        /// This property cannot be set explicitly.
-        /// </summary>
-        QuestionPrevSiblingIdValueSet,
-
-        /// <summary>
-        /// Question.Position was assigned a value instead of null.
-        /// This property cannot be set explicitly.
-        /// </summary>
-        QuestionPositionValueSet,
-
-        /// <summary>
-        /// Question.IsFirstInPage was assigned a value instead of null.
-        /// This property cannot be set explicitly.
-        /// </summary>
-        QuestionIsFirstInPageValueSet,
-
-        /// <summary>
-        /// Question.IsLastInPage was assigned a value instead of null.
-        /// This property cannot be set explicitly.
-        /// </summary>
-        QuestionIsLastInPageValueSet,
-
-        /// <summary>
-        /// Question.MergingPageId was assigned a value instead of null.
-        /// This property cannot be set explicitly.
-        /// </summary>
-        QuestionMergingPageIdValueSet,
-
-	    /// <summary>
-	    ///   Unable to create the scenario in AskiaCore.
-	    ///   (Code: 60007)
-	    /// </summary>
-        UnableToCreateQuestionFromAskiaCore,
-
-		/// <summary>
-		/// The question to restore could not be found using the supplied question ID.
-		/// </summary>
-		QuestionRestoreFailureNotFound,
-
-	    /// <summary>
-	    /// The question to restore is already not marked as deleted.
-	    /// </summary>
-	    QuestionRestoreFailureNotDeleted,
-
-		/// <summary>
-		/// The question ImpType value is invalid.
-		/// </summary>
-		QuestionInvalidImpTypeValue,
-
-		/// <summary>
-		/// The question ImpClosedMatchingType value is invalid.
-		/// </summary>
-		QuestionInvalidImpClosedMatchingTypeValue,
-
-		/// <summary>
-		/// The question ImpPanelUpdateType value is invalid.
-		/// </summary>
-		QuestionInvalidImpPanelUpdateTypeValue,
-
-		/// <summary>
-		/// The question LinkType value is invalid.
-		/// </summary>
-		QuestionInvalidLinkTypeValue,
-
-	    /// <summary>
-	    /// The question RotationType value is invalid.
-	    /// </summary>
-	    QuestionInvalidRotationTypeValue,
-
-	    /// <summary>
-	    /// The question Visibility value is invalid.
-	    /// </summary>
-	    QuestionInvalidVisibilityValue,
-
-		/// <summary>
-		/// The question Shortcut value is invalid.
-		/// </summary>
-		QuestionInvalidShortcutValue,
-
-	    /// <summary>
-	    /// The question Type value is invalid.
-	    /// </summary>
-	    QuestionInvalidTypeValue,
-
-	    /// <summary>
-	    /// The question control element control could not be set.
-	    /// </summary>
-	    QuestionSetExtensionFailure,
-
-	    /// <summary>
-	    ///   Unable to save the question in the Askia Design database.
-	    /// </summary>
-	    UnableToSaveQuestionInDesignDatabase,
-
-	    /// <summary>
-	    ///   Unable to save the list of responses in the Askia Design database.
-	    /// </summary>
-	    UnableToSaveResponsesInDesignDatabase,
-
-		/// <summary>
-		/// The question Id value is invalid.
-		/// </summary>
-		QuestionInvalidIdValue,
-
-		/// <summary>
-		/// No question with an ID equal to the NextSiblingId value could be found.
-		/// </summary>
-		QuestionNextSiblingIdNotFound,
-
-	    /// <summary>
-	    /// The supplied parent question is not the parent for the supplied previous sibling question.
-	    /// </summary>
-	    QuestionMovementParentIdPrevSiblingMismatch,
-
-		/// <summary>
-		/// The questions could not be moved. AskiaCore returned an error.
-		/// </summary>
-		QuestionMovementFailure,
-
-		/// <summary>
-		/// An error occurred saving the survey after moving the questions.
-		/// </summary>
-		QuestionMovementSaveFailure,
-
-	    /// <summary>
-	    /// The questions could not be indented. AskiaCore returned an error.
-	    /// </summary>
-	    QuestionIndentFailure,
-
-		/// <summary>
-		/// An error occurred saving the survey after indenting the questions.
-		/// </summary>
-		QuestionIndentSaveFailure,
-
-	    /// <summary>
-	    /// The questions could not be unindented. AskiaCore returned an error.
-	    /// </summary>
-	    QuestionUnindentFailure,
-
-	    /// <summary>
-	    /// An error occurred saving the survey after unindenting the questions.
-	    /// </summary>
-	    QuestionUnindentSaveFailure,
-
-	    /// <summary>
-	    /// The questions could not be split. AskiaCore returned an error.
-	    /// </summary>
-	    QuestionSplitFailure,
-
-		/// <summary>
-		/// An error occurred saving the survey after splitting the questions.
-		/// </summary>
-		QuestionSplitSaveFailure,
-
-	    /// <summary>
-	    /// The questions could not be merged. AskiaCore returned an error.
-	    /// </summary>
-	    QuestionMergeFailure,
-
-	    /// <summary>
-	    /// An error occurred saving the survey after merging the questions.
-	    /// </summary>
-	    QuestionMergeSaveFailure,
-
-	    /// <summary>
-	    /// The question type was null or invalid.
-	    /// </summary>
-	    QuestionTypeNullOrInvalid,
-
-		/// <summary>
-		/// The question link type was null or invalid.
-		/// </summary>
-	    QuestionLinkTypeNullOrInvalid,
-
-		/// <summary>
-		/// The question rotation type was null or invalid.
-		/// </summary>
-	    QuestionRotationTypeNullOrInvalid,
-
-		/// <summary>
-		/// The question anonymisation type was null or invalid.
-		/// </summary>
-		QuestionAnonymisationTypeNullOrInvalid,
-		#endregion
-
-		#region Element
-		/// <summary>
-		/// The question control element could not be saved.
-		/// </summary>
-		ElementSaveFailure,
-
-		/// <summary>
-		/// Unable to create the element in AskiaCore.
-		/// </summary>
-	    UnableToCreateElementFromAskiaCore,
-
-		/// <summary>
-		/// Unable to find the control associated to the element.
-		/// </summary>
-	    ElementControlNotFound,
-
-	    /// <summary>
-	    /// Unable to find the page template associated to the element.
-	    /// </summary>
-	    ElementPageTemplateNotFound,
-
-		/// <summary>
-		/// Element.PrevSiblingId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementPrevSiblingIdValueSet,
-
-		/// <summary>
-		/// Element.Position was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementPositionValueSet,
-
-	    /// <summary>
-	    /// The element Type value is invalid.
-	    /// </summary>
-	    ElementInvalidTypeValue,
-
-		/// <summary>
-		/// The element targeted as the next sibling could not be found by the ID supplied.
-		/// </summary>
-		ElementNextSiblingNotFound,
-
-		/// <summary>
-		///   Unable to save the element in the Askia Design database.
-		/// </summary>
-		UnableToSaveElementInDesignDatabase,
-
-		/// <summary>
-		/// Unable to delete the element in the Askia Design database.
-		/// </summary>
-	    UnableToDeleteElementFromAskiaCore,
-
-	    /// <summary>
-	    /// Unable to move the element in the Askia Design database.
-	    /// </summary>
-	    UnableToMoveElementInAskiaCore,
-
-		/// <summary>
-		/// Unable to find sibling element in the Askia Design database.
-		/// </summary>
-	    ElementPrevSiblingNotFound,
-
-	    /// <summary>
-	    /// The supplied parent element is not the parent for the supplied previous sibling element.
-	    /// </summary>
-	    ElementMovementParentIdPrevSiblingMismatch,
-
-		/// <summary>
-		/// Element.FirstChildId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementFirstChildIdValueSet,
-
-		/// <summary>
-		/// Element.IsDeleted was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-	    ElementIsDeletedValueSet,
-
-		/// <summary>
-		/// Element.LastChildId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementLastChildIdValueSet,
-
-		/// <summary>
-		/// Element.NextSiblingId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementNextSiblingIdValueSet,
-
-		/// <summary>
-		/// Element.ParentId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-	    ElementParentIdValueSet,
-
-		/// <summary>
-		/// Element.QuestionId was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ElementQuestionIdValueSet,
-
-	    /// <summary>
-	    /// Element.Seed was assigned a value instead of null.
-	    /// This property should not be set explicitly for this operation.
-	    /// </summary>
-	    ElementSeedValueSet,
-		#endregion
-
-		#region Response
-		/// <summary>
-		/// Unable to find the response in the Askia Design database.
-		/// </summary>
-		ResponseNotFoundInDesignDatabase,
-
-	    /// <summary>
-	    /// The response Id value is invalid.
-	    /// </summary>
-	    ResponseInvalidIdValue,
-
-		/// <summary>
-		/// Response.Position was assigned a value instead of null.
-		/// This property cannot be set explicitly.
-		/// </summary>
-		ResponsePositionValueSet,
-
-		/// <summary>
-		/// No response with an ID equal to the NextSiblingId value could be found.
-		/// </summary>
-		ResponseNextSiblingIdNotFound,
-
-	    /// <summary>
-	    /// No response with an ID equal to the PrevSiblingId value could be found.
-	    /// </summary>
-	    ResponsePrevSiblingIdNotFound,
-
-		/// <summary>
-		///   Unable to save the response in the Askia Design database.
-		/// </summary>
-		UnableToSaveResponseInDesignDatabase,
-
-	    /// <summary>
-	    /// Unable to delete the response in AskiaCore.
-	    /// </summary>
-	    UnableToDeleteResponseFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to create the response in AskiaCore.
-	    /// </summary>
-	    UnableToCreateResponseFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to create the responses in AskiaCore.
-	    /// </summary>
-	    UnableToCreateResponsesFromAskiaCore,
-
-		/// <summary>
-		/// The questionID value in the response DTO does not match the ID
-		/// of the question that the response is to be added to.
-		/// </summary>
-		ResponseQuestionIdInvalidValueSet,
-
-	    /// <summary>
-	    /// The response Type value is invalid.
-	    /// </summary>
-	    ResponseInvalidTypeValue,
-
-		/// <summary>
-		/// The response BaseType value is invalid.
-		/// </summary>
-	    ResponseInvalidBaseTypeValue,
-
-		/// <summary>
-		/// The response RotationBehaviour value is invalid.
-		/// </summary>
-		ResponseInvalidRotationBehaviourValue,
-
-		/// <summary>
-		/// The supplied parent response is not the parent for the supplied
-		/// previous sibling response.
-		/// </summary>
-		ResponseMovementParentIdPrevSiblingMismatch,
-
-	    /// <summary>
-	    /// The responses could not be moved. AskiaCore returned an error.
-	    /// </summary>
-	    ResponseMovementFailure,
-
-	    /// <summary>
-	    /// The responses could not be indented. AskiaCore returned an error.
-	    /// </summary>
-	    ResponsesIndentFailure,
-
-		/// <summary>
-		/// An error occurred saving the survey after indenting the responses.
-		/// </summary>
-		ResponsesIndentSaveFailure,
-
-		/// <summary>
-		/// The responses could not be unindented. AskiaCore returned an error.
-		/// </summary>
-		ResponsesUnindentFailure,
-
-		/// <summary>
-		/// An error occurred saving the survey after unindenting the responses.
-		/// </summary>
-		ResponsesUnindentSaveFailure,
-
-	    /// <summary>
-	    /// An error occurred saving the survey after moving the responses.
-	    /// </summary>
-	    ResponseMovementSaveFailure,
-
-	    /// <summary>
-	    /// An error occurred saving the survey after indenting the responses.
-	    /// </summary>
-	    ResponseIndentSaveFailure,
-
-	    /// <summary>
-	    /// An error occurred saving the survey after unindenting the responses.
-	    /// </summary>
-	    ResponseUnindentSaveFailure,
-
-	    /// <summary>
-	    /// The response type was null or invalid.
-	    /// </summary>
-	    ResponseTypeNullOrInvalid,
-
-	    /// <summary>
-	    /// The response base type was null or invalid.
-	    /// </summary>
-	    ResponseBaseTypeNullOrInvalid,
-
-		/// <summary>
-		/// The response rotation behaviour type was null or invalid.
-		/// </summary>
-		ResponseRotationBehaviourNullOrInvalid,
-		#endregion
-
-		#region ResponseLink
-		/// <summary>
-		///
-		/// </summary>
-		UnableToSaveResponseLinkInDesignDatabase,
-
-	    /// <summary>
-	    ///   Unable to create the linked response in AskiaCore.
-	    /// </summary>
-	    UnableToCreateResponseLinkFromAskiaCore,
-
-	    /// <summary>
-	    ///
-	    /// </summary>
-	    UnableToDeleteResponseLinkFromAskiaCore,
-	    #endregion
-
-	    #region HtmlRendering
-	    /// <summary>
-	    /// Null value returned from PageElement.RenderPage().
-	    /// </summary>
-	    HtmlRenderIsNull,
-
-	    /// <summary>
-	    /// The page could not be rendered. AskiaCore returned errors.
-	    /// </summary>
-	    HtmlRenderErrorsOccurred,
-	    #endregion
-
-	    #region Misc
-	    /// <summary>
-	    /// No item IDs were supplied.
-	    /// </summary>
-	    ItemsEmptyArray,
-
-	    /// <summary>
-	    /// Insufficient item IDs were supplied.
-	    /// </summary>
-	    ItemsInsufficientArray,
-
-	    /// <summary>
-	    /// The input string could not be converted to a dto.
-	    /// </summary>
-	    UnableToDeserialiseJsonInput,
-
-	    /// <summary>
-	    /// The dto could not be serialised to a Json string.
-	    /// </summary>
-	    UnableToSerialiseToJson,
-
-		/// <summary>
-		/// No input was supplied.
-		/// </summary>
-		InputIsNull,
-
-		/// <summary>
-		/// The supplied value could not be converted into a question type for default control.
-		/// </summary>
-		InvalidQuestionTypeForDefaultControlValue,
-		#endregion
-
-		#region Test Survey
-		/// <summary>
-		/// The supplied action for testing a survey is not valid.
-		/// </summary>
-		InvalidSurveyAction,
-
-		/// <summary>
-		/// The interview for the survey testing could not be saved.
-		/// </summary>
-	    UnableToSaveInterview,
-
-	    /// <summary>
-	    /// The interview for the survey testing could not be loaded.
-	    /// </summary>
-		UnableToLoadInterview,
-
-		/// <summary>
-		/// The current page of the survey interview could not be rendered.
-		/// </summary>
-	    UnableToRenderInterviewPage,
-
-		/// <summary>
-		/// The interview action was empty or invalid.
-		/// </summary>
-		InvalidInterviewAction,
-
-		/// <summary>
-		/// The interview is marked as finished and the user attempted to move to a different screen, which is not permitted.
-		/// </summary>
-		UnableToMoveWithinFinishedInterview,
-
-	    /// <summary>
-	    /// AskiaCore returned an empty value when attempting to move the interview to a different screen.
-	    /// </summary>
-	    NullValueWhenMovingWithinInterviewInAskiaCore,
-
-		/// <summary>
-		/// AskiaCore returned an error when attempting to move the interview to a different screen.
-		/// </summary>
-	    ErrorWhenMovingWithinInterviewInAskiaCore,
-
-	    /// <summary>
-	    /// An exception occurred when attempting to move an interview to a different screen.
-	    /// </summary>
-	    ExceptionWhenMovingWithinInterview,
-		#endregion
-
-		#region Resource
-	    /// <summary>
-	    /// Unable to find the resource in the Askia Design database.
-	    /// </summary>
-	    ResourceNotFoundInDesignDatabase,
-
-		/// <summary>
-		/// The HTTP request to create a resource did not contain the required resource file.
-		/// </summary>
-	    ResourcesNoFileInRequest,
-
-		/// <summary>
-		/// The HTTP request resource file was empty.
-		/// </summary>
-		ResourceFileEmptyInRequest,
-
-		/// <summary>
-		/// Could not create a resource because a file with same name already exists.
-		/// </summary>
-		ResourceFileNameAlreadyInUse,
-
-		/// <summary>
-		/// An error occured while trying to access the file stream for a resource.
-		/// </summary>
-		ResourceUploadFileNotReadable,
-
-
-		/// <summary>
-		///   Unable to save the resource in the Askia Design database.
-		/// </summary>
-	    ResourceSaveFailure,
-
-		/// <summary>
-		/// The required resource files descriptors were not found or were invalid.
-		/// </summary>
-		ResourceFileDescriptorsNotFoundOrInvalid,
-
-	    /// <summary>
-	    ///   Unable to delete the resource in AskiaCore.
-	    /// </summary>
-	    UnableToDeleteResourceFromAskiaCore,
-
-	    /// <summary>
-	    /// The resource type was null or invalid.
-	    /// </summary>
-	    ResourceTypeNullOrInvalid,
-
-	    /// <summary>
-	    ///   Unable to create the resource in AskiaCore.
-	    /// </summary>
-	    UnableToCreateResourceFromAskiaCore,
-		#endregion
-
-		#region Languages
-		/// <summary>
-		/// At least one of the language IDs supplied is not recognised.
-		/// </summary>
-		UnrecognisedLanguageIds,
-
-	    /// <summary>
-	    /// The list of language IDs could not be parsed. It should be a comma-delimited string.
-	    /// </summary>
-	    UnableToParseLanguageIds,
-		#endregion
-
-		#region SurveyLanguages
-		/// <summary>
-		/// Unable to create the survey language in AskiaCore.
-		/// </summary>
-		UnableToCreateSurveyLanguageFromAskiaCore,
-
-	    /// <summary>
-	    /// The required survey texts CSV file was not found or was invalid.
-	    /// </summary>
-	    SurveyTextsFileNotFoundOrInvalid,
-
-	    /// <summary>
-	    /// The required survey texts CSV file was provided but could not be read.
-	    /// </summary>
-	    SurveyTextsFileCouldNotBeRead,
-		#endregion
-
-		#region Routings
-		/// <summary>
-		///   Unable to create the routing in AskiaCore.
-		/// </summary>
-		UnableToCreateRoutingFromAskiaCore,
-
-		/// <summary>
-		///   Unable to save the routing in the Askia Design database.
-		/// </summary>
-	    UnableToSaveRoutingInDesignDatabase,
-
-	    /// <summary>
-	    ///   Unable to position the routing in the Askia Design database.
-	    /// </summary>
-	    UnableToPositionRoutingInDesignDatabase,
-
-		/// <summary>
-		///   Unable to delete the routing in AskiaCore.
-		/// </summary>
-		UnableToDeleteRoutingFromAskiaCore,
-
-		/// <summary>
-		/// The supplied routing action type value is 'null' when a value is required.
-		/// </summary>
-	    RoutingNullActionType,
-
-	    /// <summary>
-	    /// The supplied routing action type value is not a valid or recognised.
-	    /// </summary>
-	    RoutingInvalidActionType,
-
-	    /// <summary>
-	    /// The routing action type was null or invalid.
-	    /// </summary>
-	    RoutingActionTypeNullOrInvalid,
-
-	    /// <summary>
-	    /// The routing condition type was null or invalid.
-	    /// </summary>
-	    RoutingConditionTypeNullOrInvalid,
-
-		/// <summary>
-		/// The routing condition could not be set. AskiaCore rejected it.
-		/// </summary>
-		RoutingConditionInvalid,
-
-		/// <summary>
-		/// Unable to find the routing in the Askia Design database.
-		/// </summary>
-		RoutingNotFoundInDesignDatabase,
-
-	    /// <summary>
-	    /// Routing.IsDeleted was assigned a value instead of null.
-	    /// This property cannot be set explicitly.
-	    /// </summary>
-	    RoutingIsDeletedValueSet,
-
-	    /// <summary>
-	    /// The supplied routing caption type value is not a valid or recognised.
-	    /// </summary>
-	    RoutingCaptionInvalidType,
-
-	    /// <summary>
-	    /// The supplied routing caption type is not valid for the action of this routing.
-	    /// </summary>
-	    RoutingCaptionInvalid,
-
-		/// <summary>
-		///   Unable to delete the routing targets for a routing in AskiaCore.
-		/// </summary>
-		UnableToDeleteRoutingTargetsFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to set the action parameter value for a routing in AskiaCore.
-	    /// </summary>
-	    RoutingInvalidActionParameterValue,
-
-		/// <summary>
-		/// Unable to create a routing without the start question ID.
-		/// </summary>
-		RoutingStartQuestionIdNotSet,
-
-		/// <summary>
-		/// The ID of the routing is required but missing.
-		/// </summary>
-		RoutingIdNotSet,
-
-	    /// <summary>
-	    /// The IDs of the routings are required but missing.
-	    /// </summary>
-	    RoutingIdsNotSet,
-
-		/// <summary>
-		/// The target position of the routing(s) was not set.
-		/// </summary>
-		RoutingPositionNotSet,
-
-	    /// <summary>
-	    /// The start question of the routing(s) was not set.
-	    /// </summary>
-	    RoutingStartQuestionNotSet,
-
-	    /// <summary>
-	    /// The start type of the routing(s) was not set.
-	    /// </summary>
-		RoutingStartTypeNotSet,
-
-		/// <summary>
-		/// The start question for the routing could not be found using the supplied identifier.
-		/// </summary>
-		RoutingStartQuestionNotFound,
-
-		/// <summary>
-		/// AskiaCore was unable to identify the entities affected by the operation.
-		/// </summary>
-		RoutingUnableToGetAffectedEntities,
-
-		/// <summary>
-		/// AskiaCore rejected the supplied routing name.
-		/// </summary>
-		RoutingNameRejected,
-
-	    /// <summary>
-	    /// The routing start type was null or invalid.
-	    /// </summary>
-		RoutingStartTypeNullOrInvalid,
-		#endregion
-
-		#region RoutingTarget
-		/// <summary>
-		/// The supplied routing target type value is not a valid or recognised.
-		/// </summary>
-		RoutingTargetInvalidType,
-
-	    /// <summary>
-	    ///   Unable to create the scenario in AskiaCore.
-	    /// </summary>
-	    UnableToCreateRoutingTargetFromAskiaCore,
-
-	    /// <summary>
-	    ///   Unable to save the routing target in the Askia Design database.
-	    /// </summary>
-	    UnableToSaveRoutingTargetInDesignDatabase,
-
-		/// <summary>
-		///   Unable to delete the routing target in AskiaCore.
-		/// </summary>
-		UnableToDeleteRoutingTargetFromAskiaCore,
-
-	    /// <summary>
-	    ///   The response target ID value supplied is not valid.
-	    /// </summary>
-	    ResponseTargetIdInvalidValue,
-
-	    /// <summary>
-	    ///   The response target type value supplied is not valid.
-	    /// </summary>
-	    ResponseTargetTypeInvalidValue,
-
-	    /// <summary>
-	    ///   The response target type value supplied is null.
-	    /// </summary>
-	    ResponseTargetNullQuestionIdValue,
-		#endregion
-
-		#region PublishSurvey
-
-	    /// <summary>
-	    ///   The CcaWebServer could not be found or is not accessible to the user.
-	    /// </summary>
-	    CcaWebServerNotFound,
-	    /// <summary>
-	    ///   The item could not be found or is not accessible to the user.
-	    /// </summary>
-	    ItemDoesntExist,
-		#endregion
-
-		#region User
-		/// <summary>
-		///   The user could not be found in AskiaPortal.
-		/// </summary>
-		UserNotFoundInPortal = 70000,
-		#endregion
-
-		#region End
-		/// <summary>
-		///   No error.
-		/// </summary>
-		NoError = 80000,
-	    /// <summary>
-	    ///   Unspecified error.
-	    /// </summary>
-	    Unspecified = 80001,
-		/// <summary>
-		///   Unknown error.
-		/// </summary>
-		Unknown = 80002,
-		#endregion
+
+### Global errors
+
+  - ItemNotFound: Unable to find the entity in the Askia Design database.
+  - NoError: No error.
+  - Unspecified: Unspecified error.
+  - Unknown: Unknown error.
+
+
+## Survey related errors
+
+  - UnableToGenerateSurveyFromSurveyTemplate:  Unable to create a survey from a survey template.
+  - UnableToCreateSurveyFromAskiaCore: Unable to create the survey in AskiaCore.
+  - UnableToSaveSurveyInDesignDatabase: Unable to save the survey in the Askia Design database.
+  - UnableChangeSurveyDefaultPageTemplateId:  Unable to change the survey DefaultPageTemplateId
+  - UnableToDeserialiseSurveyInput: The input string could not be converted to a SurveyDto.
+  - UnableToSetSurveyName: Unable to set the survey `Name`.
+  - UnableToSetSurveyDefaultLanguageId: Unable to set the survey `DefaultLanguageId`.
+  - UnableToSetSurveyDefaultPageTemplateId: Unable to set the survey `DefaultPageTemplateId`.
+  - UnableToSetSurveyPageTemplateProperties: Unable to set the survey `PageTemplateProperties`.
+  - UnableToSetSurveyThemeProperties: Unable to set the survey `ThemeProperties`.
+  - SurveyExtractResourcesFailure: The resources for the survey could not be extracted.
+  - SurveyNoFileInRequest: The HTTP request is required to contain a file but none was found.
+  - SurveyLanguageTextsFileEmptyInRequest: The HTTP request is required to contain a file. The file is present but is empty.
+  - SurveyLanguageTextsFileNotReadable: An error occured while trying to access the file stream for the survey language texts
+  - UnableToCreateSubSurveyFromQuestion: An error occurred when trying to create a sub-survey based on a question in the existing survey.
+  - SurveyMoveRoutingsFailure: Unable to move the routings.
+  - UnableToSaveRoutingsInDesignDatabase: Unable to save the routings.
+
+
+## Scenario related errors
+
+
+  - UnableToSaveScenarioInDesignDatabase: Unable to save the scenario in the Askia Design database.
+  - UnableToCreateScenarioFromAskiaCore: Unable to create the scenario in AskiaCore.
+  - UnableToDeleteScenarioFromAskiaCore: Unable to delete the scenario in AskiaCore.
+  - UnableToSetScenarioName: Unable to set the scenario `Name`.
+  - ScenarioNameInvalid: AskiaCore rejected the supplied scenario name.
+  - ScenarioNameNotUnique: AskiaCore rejected the supplied scenario name as non-unique.
+
+
+## ScenarioEntity related errors
+
+  - UnknownScenarioEntityType: Unknown scenario entity type.
+  - UnableToCreateScenarioEntityFromAskiaCore: Unable to create the scenario entity in AskiaCore.
+  - UnableToSaveScenarioEntityFromAskiaCore: Unable to create the scenario entity in AskiaCore.
+  - UnallowedToUpdateScenarioEntityFromAskiaCore: Unable to update the scenario entity in AskiaCore.
+  - UnableToDeleteScenarioEntityFromAskiaCore: Unable to delete the scenario entity in AskiaCore.
+
+
+
+## Question related errors
+
+  - QuestionNotFoundInDesignDatabase: Unable to find the question in the Askia Design database.
+  - UnableToDeleteQuestionFromAskiaCore: Unable to delete the question in AskiaCore.
+  - QuestionPrevSiblingIdValueSet: Question.PrevSiblingId was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - QuestionPositionValueSet: Question.Position was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - QuestionIsFirstInPageValueSet: Question.IsFirstInPage was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - QuestionIsLastInPageValueSet: Question.IsLastInPage was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - QuestionMergingPageIdValueSet: Question.MergingPageId was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - UnableToCreateQuestionFromAskiaCore: Unable to create the scenario in AskiaCore.
+  - QuestionRestoreFailureNotFound: The question to restore could not be found using the supplied question ID.
+  - QuestionRestoreFailureNotDeleted: The question to restore is already not marked as deleted.
+  - QuestionInvalidImpTypeValue: The question ImpType value is invalid.
+  - QuestionInvalidImpClosedMatchingTypeValue: The question ImpClosedMatchingType value is invalid.
+  - QuestionInvalidImpPanelUpdateTypeValue: The question ImpPanelUpdateType value is invalid.
+  - QuestionInvalidLinkTypeValue: The question LinkType value is invalid.
+  - QuestionInvalidRotationTypeValue: The question RotationType value is invalid.
+  - QuestionInvalidVisibilityValue: The question Visibility value is invalid.
+  - QuestionInvalidShortcutValue: The question Shortcut value is invalid.
+  - QuestionInvalidTypeValue: The question Type value is invalid.
+  - QuestionSetExtensionFailure: The question control element control could not be set.
+  - UnableToSaveQuestionInDesignDatabase: Unable to save the question in the Askia Design database.
+  - UnableToSaveResponsesInDesignDatabase: Unable to save the list of responses in the Askia Design database.
+  - QuestionInvalidIdValue: The question Id value is invalid.
+  - QuestionNextSiblingIdNotFound: No question with an ID equal to the NextSiblingId value could be found.
+  - QuestionMovementParentIdPrevSiblingMismatch: The supplied parent question is not the parent for the supplied previous sibling question.
+  - QuestionMovementFailure: The questions could not be moved. AskiaCore returned an error.
+  - QuestionMovementSaveFailure: An error occurred saving the survey after moving the questions.
+  - QuestionIndentFailure: The questions could not be indented. AskiaCore returned an error.
+  - QuestionIndentSaveFailure: An error occurred saving the survey after indenting the questions.
+  - QuestionUnindentFailure: The questions could not be unindented. AskiaCore returned an error.
+  - QuestionUnindentSaveFailure: An error occurred saving the survey after unindenting the questions.
+  - QuestionSplitFailure: The questions could not be split. AskiaCore returned an error.
+  - QuestionSplitSaveFailure: An error occurred saving the survey after splitting the questions.
+  - QuestionMergeFailure: The questions could not be merged. AskiaCore returned an error.
+  - QuestionMergeSaveFailure: An error occurred saving the survey after merging the questions.
+  - QuestionTypeNullOrInvalid: The question type was null or invalid.
+  - QuestionLinkTypeNullOrInvalid: The question link type was null or invalid.
+  - QuestionRotationTypeNullOrInvalid: The question rotation type was null or invalid.
+  - QuestionAnonymisationTypeNullOrInvalid: The question anonymisation type was null or invalid.
+
+## Question related errors
+
+  - ElementSaveFailure: The question control element could not be saved.
+  - UnableToCreateElementFromAskiaCore: Unable to create the element in AskiaCore.
+  - ElementControlNotFound: Unable to find the control associated to the element.
+  - ElementPageTemplateNotFound: Unable to find the page template associated to the element.
+  - ElementPrevSiblingIdValueSet: Element.PrevSiblingId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementPositionValueSet: Element.Position was assigned a value instead of null.
+  This property cannot be set explicitly.
+  - ElementInvalidTypeValue: The element Type value is invalid.
+  - ElementNextSiblingNotFound: The element targeted as the next sibling could not be found by the ID supplied.
+  - UnableToSaveElementInDesignDatabase: Unable to save the element in the Askia Design database.
+  - UnableToDeleteElementFromAskiaCore: Unable to delete the element in the Askia Design database.
+  - UnableToMoveElementInAskiaCore: Unable to move the element in the Askia Design database.
+  - ElementPrevSiblingNotFound: Unable to find sibling element in the Askia Design database.
+  - ElementMovementParentIdPrevSiblingMismatch: The supplied parent element is not the parent for the supplied previous sibling element.
+  - ElementFirstChildIdValueSet: Element.FirstChildId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementIsDeletedValueSet: Element.IsDeleted was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementLastChildIdValueSet: Element.LastChildId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementNextSiblingIdValueSet: Element.NextSiblingId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementParentIdValueSet: Element.ParentId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementQuestionIdValueSet: Element.QuestionId was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ElementSeedValueSet: Element.Seed was assigned a value instead of null.
+	This property should not be set explicitly for this operation.
+
+
+## Response related errors
+
+  - ResponseNotFoundInDesignDatabase: Unable to find the response in the Askia Design database.
+  - ResponseInvalidIdValue: The response Id value is invalid.
+  - ResponsePositionValueSet: Response.Position was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - ResponseNextSiblingIdNotFound: No response with an ID equal to the NextSiblingId value could be found.
+  - ResponsePrevSiblingIdNotFound: No response with an ID equal to the PrevSiblingId value could be found.
+  - UnableToSaveResponseInDesignDatabase: Unable to save the response in the Askia Design database.
+  - UnableToDeleteResponseFromAskiaCore: Unable to delete the response in AskiaCore.
+  - UnableToCreateResponseFromAskiaCore: Unable to create the response in AskiaCore.
+  - UnableToCreateResponsesFromAskiaCore: Unable to create the responses in AskiaCore.
+  - ResponseQuestionIdInvalidValueSet: The questionID value in the response DTO does not match the ID
+	of the question that the response is to be added to.
+  - ResponseInvalidTypeValue: The response Type value is invalid.
+  - ResponseInvalidBaseTypeValue: The response BaseType value is invalid.
+  - ResponseInvalidRotationBehaviourValue: The response RotationBehaviour value is invalid.
+  - ResponseMovementParentIdPrevSiblingMismatch: The supplied parent response is not the parent for the supplied
+	previous sibling response.
+  - ResponseMovementFailure: The responses could not be moved. AskiaCore returned an error.
+  - ResponsesIndentFailure: The responses could not be indented. AskiaCore returned an error.
+  - ResponsesIndentSaveFailure: An error occurred saving the survey after indenting the responses.
+  - ResponsesUnindentFailure: The responses could not be unindented. AskiaCore returned an error.
+  - ResponsesUnindentSaveFailure: An error occurred saving the survey after unindenting the responses.
+  - ResponseMovementSaveFailure: An error occurred saving the survey after moving the responses.
+  - ResponseIndentSaveFailure: An error occurred saving the survey after indenting the responses.
+  - ResponseUnindentSaveFailure: An error occurred saving the survey after unindenting the responses.
+  - ResponseTypeNullOrInvalid: The response type was null or invalid.
+  - ResponseBaseTypeNullOrInvalid: The response base type was null or invalid.
+  - ResponseRotationBehaviourNullOrInvalid: The response rotation behaviour type was null or invalid.
+
+## ResponseLink related errors
+
+  - UnableToSaveResponseLinkInDesignDatabase:
+  - UnableToCreateResponseLinkFromAskiaCore: Unable to create the linked response in AskiaCore.
+  - UnableToDeleteResponseLinkFromAskiaCore:
+
+
+## Routings related errors  
+
+  - UnableToCreateRoutingFromAskiaCore: Unable to create the routing in AskiaCore.
+  - UnableToSaveRoutingInDesignDatabase: Unable to save the routing in the Askia Design database.
+  - UnableToPositionRoutingInDesignDatabase: Unable to position the routing in the Askia Design database.
+  - UnableToDeleteRoutingFromAskiaCore: Unable to delete the routing in AskiaCore.
+  - RoutingNullActionType: The supplied routing action type value is 'null' when a value is required.
+  - RoutingInvalidActionType: The supplied routing action type value is not a valid or recognised.
+  - RoutingActionTypeNullOrInvalid: The routing action type was null or invalid.
+  - RoutingConditionTypeNullOrInvalid: The routing condition type was null or invalid.
+  - RoutingConditionInvalid: The routing condition could not be set. AskiaCore rejected it.
+  - RoutingNotFoundInDesignDatabase: Unable to find the routing in the Askia Design database.
+  - RoutingIsDeletedValueSet: Routing.IsDeleted was assigned a value instead of null.
+	This property cannot be set explicitly.
+  - RoutingCaptionInvalidType: The supplied routing caption type value is not a valid or recognised.
+  - RoutingCaptionInvalid: The supplied routing caption type is not valid for the action of this routing.
+  - UnableToDeleteRoutingTargetsFromAskiaCore: Unable to delete the routing targets for a routing in AskiaCore.
+  - RoutingInvalidActionParameterValue: Unable to set the action parameter value for a routing in AskiaCore.
+  - RoutingStartQuestionIdNotSet: Unable to create a routing without the start question ID.
+  - RoutingIdNotSet: The ID of the routing is required but missing.
+  - RoutingIdsNotSet: The IDs of the routings are required but missing.
+  - RoutingPositionNotSet: The target position of the routing(s) was not set.
+  - RoutingStartQuestionNotSet: The start question of the routing(s) was not set.
+  - RoutingStartTypeNotSet: The start type of the routing(s) was not set.
+  - RoutingStartQuestionNotFound: The start question for the routing could not be found using the supplied identifier.
+  - RoutingUnableToGetAffectedEntities: AskiaCore was unable to identify the entities affected by the operation.
+  - RoutingNameRejected: AskiaCore rejected the supplied routing name.
+  - RoutingStartTypeNullOrInvalid: The routing start type was null or invalid.
+
+
+## RoutingTarget related errors
+
+  - RoutingTargetInvalidType: The supplied routing target type value is not a valid or recognised.
+  - UnableToCreateRoutingTargetFromAskiaCore: Unable to create the scenario in AskiaCore.
+  - UnableToSaveRoutingTargetInDesignDatabase: Unable to save the routing target in the Askia Design database.
+  - UnableToDeleteRoutingTargetFromAskiaCore: Unable to delete the routing target in AskiaCore.
+  - ResponseTargetIdInvalidValue: The response target ID value supplied is not valid.
+  - ResponseTargetTypeInvalidValue: The response target type value supplied is not valid.
+  - ResponseTargetNullQuestionIdValue: The response target type value supplied is null.
+
+
+
+## HtmlRendering related errors
+
+  - HtmlRenderIsNull: Null value returned from PageElement.RenderPage().
+  - HtmlRenderErrorsOccurred: The page could not be rendered. AskiaCore returned errors.
+
+
+## Test Survey related errors
+
+  - InvalidSurveyAction: The supplied action for testing a survey is not valid.
+  - UnableToSaveInterview: The interview for the survey testing could not be saved.
+  - UnableToLoadInterview: The interview for the survey testing could not be loaded.
+  - UnableToRenderInterviewPage: The current page of the survey interview could not be rendered.
+  - InvalidInterviewAction: The interview action was empty or invalid.
+  - UnableToMoveWithinFinishedInterview: The interview is marked as finished and the user attempted to move to a different screen, which is not permitted.
+  - NullValueWhenMovingWithinInterviewInAskiaCore: AskiaCore returned an empty value when attempting to move the interview to a different screen.
+  - ErrorWhenMovingWithinInterviewInAskiaCore: AskiaCore returned an error when attempting to move the interview to a different screen.
+  - ExceptionWhenMovingWithinInterview: An exception occurred when attempting to move an interview to a different screen.
+
+
+## Resource related errors
+
+  - ResourceNotFoundInDesignDatabase: Unable to find the resource in the Askia Design database.
+  - ResourcesNoFileInRequest: The HTTP request to create a resource did not contain the required resource file.
+  - ResourceFileEmptyInRequest: The HTTP request resource file was empty.
+  - ResourceFileNameAlreadyInUse: Could not create a resource because a file with same name already exists.
+  - ResourceUploadFileNotReadable: An error occured while trying to access the file stream for a resource.
+  - ResourceSaveFailure: Unable to save the resource in the Askia Design database.
+  - ResourceFileDescriptorsNotFoundOrInvalid: The required resource files descriptors were not found or were invalid.
+  - UnableToDeleteResourceFromAskiaCore: Unable to delete the resource in AskiaCore.
+  - ResourceTypeNullOrInvalid: The resource type was null or invalid.
+  - UnableToCreateResourceFromAskiaCore: Unable to create the resource in AskiaCore.
+
+
+## Languages related errors
+
+  - UnrecognisedLanguageIds: At least one of the language IDs supplied is not recognised.
+  - UnableToParseLanguageIds: The list of language IDs could not be parsed. It should be a comma-delimited string.
+
+
+## SurveyLanguages related errors
+
+  - UnableToCreateSurveyLanguageFromAskiaCore: Unable to create the survey language in AskiaCore.
+  - SurveyTextsFileNotFoundOrInvalid: The required survey texts CSV file was not found or was invalid.
+  - SurveyTextsFileCouldNotBeRead: The required survey texts CSV file was provided but could not be read.
+
+
+## PublishSurvey related errors  
+
+
+  - CcaWebServerNotFound: The CcaWebServer could not be found or is not accessible to the user.
+  - ItemDoesntExist: The item could not be found or is not accessible to the user.
+
+
+## User related errors
+
+  - UserNotFoundInPortal: The user could not be found in AskiaPortal.
+
+
+
+## Misc errors
+
+  - ItemsEmptyArray: No item IDs were supplied.
+  - ItemsInsufficientArray: Insufficient item IDs were supplied.
+  - UnableToDeserialiseJsonInput: The input string could not be converted to a dto.
+  - UnableToSerialiseToJson: The dto could not be serialised to a Json string.
+  - InputIsNull: No input was supplied.
+  - InvalidQuestionTypeForDefaultControlValue: The supplied value could not be converted into a question type for default control.
