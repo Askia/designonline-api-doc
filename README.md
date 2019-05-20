@@ -7,7 +7,7 @@
 - Authentification (Authentification is a work in progress in DO API, please refer to [authentification introduction](intro-authentification.md))
 - [Getting surveys](qstart-getsurveys.md)
 ## Guides
-- Creating a simple survey with basic Routing (survey logic)
+- [Creating a simple survey with basic Routing (survey logic)](guide-create-survey.md)
 - Loops
 - More complexe Routings
 - Customizing a survey appearance and controls

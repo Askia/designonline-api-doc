@@ -26,7 +26,11 @@ This is an example of the
 
 # Exhaustive list of error keys and description
 
-### Global errors
+## AskiaPortal errors
+In addition to all DesignOnline API specific errors (see below), we also have [AskiaPortal errors](http://installers.askia.com/HelpDesk/devs/AskiaPortalCmnDoc/html/T_AskiaPortalCmn_Exceptions_ExceptionCode.htm)
+
+
+## Global errors
 
   - ItemNotFound: Unable to find the entity in the Askia Design database.
   - NoError: No error.
@@ -291,7 +295,6 @@ This is an example of the
 ## User related errors
 
   - UserNotFoundInPortal: The user could not be found in AskiaPortal.
-
 
 
 ## Misc errors
