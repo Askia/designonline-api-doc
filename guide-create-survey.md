@@ -150,4 +150,136 @@ curl -X POST \
 }'
 ```
 
-## Adding questions and responses to the survey
+## Adding questions to the survey
+Once a survey is created you can add questions and responses in a few steps.
+
+To create a question call the following route with a POST http method:
+```
+{{url}}/AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/New
+```
+
+with `{{surveyId}}` being the id of the survey the server gave back to you on the survey creation.
+
+You can of course pass in question parameters in the json paylod (for a full list of parameters and explanations have a look at our [API reference](https://www.askia.com)):
+
+```json
+{
+  "allowsNoResponse": false,
+  "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
+  "rotationType": 2,
+  "shortcut": "q1",
+  "type": 1
+}
+```
+With this payload we ask the server to create a mandatory question (by providing a false value to `allowsNoResponse`) of `type` 1 (stands for single answer).
+The `rotationType` of the question is set to 2 and this stands for (Circular Rotation).
+The `shortcut` is a handy unique identifier you can provide and the `mainCaption`is the full text of the question.
+
+Note that the `mainCaption`is a plain html text field and you can reference any external or internal images like in any html content.
+
+Here is the cURL request:
+```shell
+curl -X POST \
+  'http://{{url}}/AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/New' \
+  -H 'Content-Type: application/json' \
+  -H 'cookie: {whatever_cookie_value_you_have}' \
+  -d '{
+  "allowsNoResponse": false,
+  "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
+  "rotationType": 2,
+  "shortcut": "q1",
+  "type": 1
+}'
+```
+the server's response should have a 200 status code with the newly created Question object.
+```json
+{
+    "allowsNoResponse": false,
+    "alwaysLinkExclusiveResponses": false,
+    "analyseCaption": "",
+    "anonymisationType": 0,
+    "categories": [],
+    "decimalPrecision": 0,
+    "firstChildId": null,
+    "id": 4,
+    "impClosedMatchingType": 0,
+    "impDatabaseDsn": "",
+    "impFieldName": "",
+    "impIsInvisibleWhenImported": false,
+    "impPanelUpdateType": 0,
+    "impSqlQuery": "",
+    "impType": 0,
+    "isDeleted": null,
+    "isExcludedFromTranslation": true,
+    "isFirstInPage": true,
+    "isLastInPage": true,
+    "isLevelDeveloped": true,
+    "isLevelLinked": false,
+    "isProbability": false,
+    "isRanked": false,
+    "isRecordable": false,
+    "isScaled": false,
+    "isVisibleInAnalyse": true,
+    "ivrNumber": "",
+    "lastChildId": null,
+    "linkedQuestionId": null,
+    "linkType": 0,
+    "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
+    "maxResponseCount": null,
+    "maxValue": null,
+    "maxVisibleResponses": "",
+    "mergingPageId": null,
+    "minResponseCount": null,
+    "minValue": null,
+    "nextSiblingId": null,
+    "noResponseEntry": "",
+    "parentId": null,
+    "pattern": "",
+    "position": 3,
+    "prevSiblingId": 2,
+    "questionIdToIncrement": 0,
+    "rotationSeed": null,
+    "rotationType": 2,
+    "shortcut": "q1",
+    "type": 1,
+    "userData": "",
+    "visibility": 0
+}
+```
+Let's repeat that for a question 2 and 3
+
+```shell
+curl -X POST \
+  https://alpha.askia.com/AskiaPortal/Modules/design/api/Surveys/{{survey_id}}/Questions/New \
+  -H 'Content-Type: application/json' \
+  -H 'cookie: {whatever_cookie_value_you_have}' \
+  -d '{
+  "shortcut": "female",
+  "type": 1,
+  "mainCaption" : "From postman: Question for a woman?"
+}'
+```
+
+```shell
+curl -X POST \
+  https://alpha.askia.com/AskiaPortal/Modules/design/api/Surveys/{{survey_id}}/Questions/New \
+  -H 'Content-Type: application/json' \
+  -H 'cookie: {whatever_cookie_value_you_have}' \
+  -d '{
+  "shortcut": "male",
+  "type": 1,
+  "mainCaption" : "From postman: Question for a woman?"
+}'
+```
+
+## Adding responses  
+At this point if you fetch the list of questions for your survey you'll receive a JSON array of three questions.
+Let's add two responses for Question 1.
+
+We will be calling the following endpoint providing the available responses in the body:
+```
+POST AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/{{question_id}}/Responses
+```
+`question_id` is of course the id of the question returned by the server at the creation stage.
+
+ 
