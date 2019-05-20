@@ -23,7 +23,6 @@ This is an example of the
 - **key** : The key of the error
 - **defaultMessage** : the default message of the error regardless of the choosen language for the platform
 
-***
 
 # Exhaustive list of error keys and description
 
