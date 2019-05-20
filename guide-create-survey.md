@@ -124,7 +124,7 @@ When creating a survey you can pass in more survey data. In  this example we'll 
 	"languages": [1036],
 	"themeProperties": {
 	  "borderWidth": "1px",
-    "borderRadius": "0.1875em",
+    	  "borderRadius": "0.1875em",
 	  "errorColor": "255,255,102"
 	}
 }
