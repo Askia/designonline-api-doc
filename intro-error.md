@@ -17,13 +17,15 @@ This is an example of the
 }
 ```
 
-- **message** : The human readable message addressed to developers or users (depending on the error) localized in whatever language your configured the plateform (see Languages & Messages API)
+- **message** : The human readable message addressed to developers or users (depending on the error) localized in whatever language your configured the platform (see Languages & Messages API)
 
 - **code** : an internal code for the error. In general you should not rely on this.
 - **key** : The key of the error
 - **defaultMessage** : the default message of the error regardless of the choosen language for the platform
 
+***
 
+# Exhaustive list of error keys and description
 
 ### Global errors
 
