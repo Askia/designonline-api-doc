@@ -348,4 +348,4 @@ If you get a 200 status code and the following json you'r all good.
 
 You've now finished this tutorial on how to create basic questions and answers. Feel free to play with the API and experiment with other parameters to pass in your questions and responses requests. At any point you can call the test endpoint `/api/Test/Survey/{surveyId}` and have a test view of your survey.
 
-Next read our [Routings Guide](guide-routings)
+Next read our [Routings Guide](guide-routings.md)
