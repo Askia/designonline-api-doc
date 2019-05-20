@@ -27,7 +27,7 @@ This is an example of the
 # Exhaustive list of error keys and description
 
 ## AskiaPortal errors
-In addition to DesignOnline API specific errors (see below), you may also receive some platform specific errors. See them here: [AskiaPortal errors](http://installers.askia.com/HelpDesk/devs/AskiaPortalCmnDoc/html/T_AskiaPortalCmn_Exceptions_ExceptionCode.htm)
+In addition to DesignOnline API specific errors (see below), you may also receive some platform specific errors. Listed here: [AskiaPortal errors](http://installers.askia.com/HelpDesk/devs/AskiaPortalCmnDoc/html/T_AskiaPortalCmn_Exceptions_ExceptionCode.htm)
 
 
 ## Global errors
