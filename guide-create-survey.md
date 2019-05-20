@@ -1,4 +1,4 @@
-# Creating a simple survey with basic Routing (survey logic)
+# Creating a simple survey
 
 This guide is assuming you have at least some experience with interacting with a REST api and that you alreay had a look at the [Authentification section of this document](intro-authentification.md)
 
@@ -282,4 +282,70 @@ POST AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/{{question_id
 ```
 `question_id` is of course the id of the question returned by the server at the creation stage.
 
- 
+the json payload is pretty straightforward on this one:
+```json
+[
+  {
+    "mainCaption": "Man : <img src=\"https://your_server/man.jpg\" height=\"42\" width=\"42\"/>"
+  },
+  {
+    "mainCaption": "Woman : <img src=\"https://your_server/woman.jpg\" height=\"42\" width=\"42\"/>"
+  }
+]
+```
+
+If you get a 200 status code and the following json you'r all good.
+```json
+[
+    {
+        "baseType": 0,
+        "entryCode": "",
+        "factor": null,
+        "firstChildId": null,
+        "id": 4,
+        "isDeleted": null,
+        "isExcludedFromTranslation": false,
+        "isExclusive": false,
+        "isSelectable": true,
+        "lastChildId": null,
+        "mainCaption": "Man : <img src=\"https://your_server/man.jpg\" height=\"42\" width=\"42\"/>",
+        "nextSiblingId": 5,
+        "parentId": null,
+        "position": 3,
+        "prevSiblingId": 3,
+        "questionId": 1,
+        "resourceId": null,
+        "rotationBehaviour": 0,
+        "semiOpenQuestionId": null,
+        "type": 0,
+        "userData": ""
+    },
+    {
+        "baseType": 0,
+        "entryCode": "",
+        "factor": null,
+        "firstChildId": null,
+        "id": 5,
+        "isDeleted": null,
+        "isExcludedFromTranslation": false,
+        "isExclusive": false,
+        "isSelectable": true,
+        "lastChildId": null,
+        "mainCaption": "Woman : <img src=\"https://your_server/woman.jpg\" height=\"42\" width=\"42\"/>",
+        "nextSiblingId": null,
+        "parentId": null,
+        "position": 4,
+        "prevSiblingId": 4,
+        "questionId": 1,
+        "resourceId": null,
+        "rotationBehaviour": 0,
+        "semiOpenQuestionId": null,
+        "type": 0,
+        "userData": ""
+    }
+]
+```
+
+You've now finished this tutorial on how to create basic questions and answers. Feel free to play with the API and experiment with other parameters to pass in your questions and responses requests. At any point you can call the test endpoint `/api/Test/Survey/{surveyId}` and have a test view of your survey.
+
+Next read our [Routings Guide](guide-routings)
