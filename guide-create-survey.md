@@ -294,7 +294,7 @@ the json payload is pretty straightforward on this one:
 ]
 ```
 
-If you get a 200 status code and the following json you'r all good.
+If you get a 200 status code and the following json (which is an array of Response objects) you're all good.
 ```json
 [
     {
