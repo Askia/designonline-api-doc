@@ -144,7 +144,7 @@ curl -X POST \
 	"languages": [1036],
 	"themeProperties": {
 	  "borderWidth": "1px",
-      "borderRadius": "0.1875em",
+          "borderRadius": "0.1875em",
 	  "errorColor": "255,255,102"
 	}
 }'
