@@ -107,7 +107,7 @@ We have to pass in the json payload inorder to update our element with the new c
 ```json
 {
   "controlId": 1, //The id of our control choosen from the available controls
-  "extensionProperties": {"useList": "1"} //some control specific properties (here we are using the control as a clmosed question dropdown)
+  "extensionProperties": {"useList": "1"} //some control specific properties (here we are using the control as a closed question dropdown)
 }
 ```
 
