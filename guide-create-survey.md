@@ -1,6 +1,6 @@
 # Creating a simple survey
 
-This guide is assuming you have at least some experience with interacting with a REST api and that you alreay had a look at the [Authentification section of this document](intro-authentification.md)
+This guide is assuming you have at least some experience with interacting with a REST api and that you already had a look at the [Authentification section of this document](intro-authentification.md)
 
 ## Creating a survey
 
@@ -185,9 +185,9 @@ curl -X POST \
   -H 'cookie: {whatever_cookie_value_you_have}' \
   -d '{
   "allowsNoResponse": false,
-  "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
+  "mainCaption": "Are you a man or a woman? <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
   "rotationType": 2,
-  "shortcut": "q1",
+  "shortcut": "q1_gender",
   "type": 1
 }'
 ```
@@ -224,7 +224,7 @@ the server's response should have a 200 status code with the newly created Quest
     "lastChildId": null,
     "linkedQuestionId": null,
     "linkType": 0,
-    "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
+    "mainCaption": "Are you a man or a woman? <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
     "maxResponseCount": null,
     "maxValue": null,
     "maxVisibleResponses": "",
@@ -240,7 +240,7 @@ the server's response should have a 200 status code with the newly created Quest
     "questionIdToIncrement": 0,
     "rotationSeed": null,
     "rotationType": 2,
-    "shortcut": "q1",
+    "shortcut": "q1_gender",
     "type": 1,
     "userData": "",
     "visibility": 0
@@ -254,7 +254,7 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'cookie: {whatever_cookie_value_you_have}' \
   -d '{
-  "shortcut": "female",
+  "shortcut": "q2_female",
   "type": 1,
   "mainCaption" : "From postman: Question for a woman?"
 }'
@@ -266,9 +266,9 @@ curl -X POST \
   -H 'Content-Type: application/json' \
   -H 'cookie: {whatever_cookie_value_you_have}' \
   -d '{
-  "shortcut": "male",
+  "shortcut": "q2_male",
   "type": 1,
-  "mainCaption" : "From postman: Question for a woman?"
+  "mainCaption" : "From postman: Question for a man?"
 }'
 ```
 
