@@ -82,7 +82,7 @@ The action resides in the `ActionType` field and it's value has to be set to dep
 
 Finally you should provide a `targets` object to the API containing the `questionId` to which you want your user to be redirected if the condition is met.  
 
-For a complete description of all the fields have a look at our [API reference](http://designhelp.askia.com/askiascript2_introduction_to_askiascript_2)).
+For a complete description of all the fields have a look at our [API reference](api-reference-intro.md)).
 
 Finally to create the Routings you need to call :
 `POST {{url}}/AskiaPortal/Modules/design/api/surveys/{{surveyId}}/routings`
@@ -118,7 +118,7 @@ the json payloads for both routings can be concatenated inside an array:
 ]
 ```
 
-Note that `((gender Has {1}))` is a piece of code in [AskiaScript](api-reference-intro.md) that describes the condition (that is "If gender has a reponseId of 1")
+Note that `((gender Has {1}))` is a piece of code in [AskiaScript](http://designhelp.askia.com/askiascript2_introduction_to_askiascript_2) that describes the condition (that is "If gender has a reponseId of 1")
 
 There are two differences between these two routings described as JSON:
 - the condition scripts are not the same as first rule should be triggered when answering **man** to the gender question and the other one **woman**.
