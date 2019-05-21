@@ -162,3 +162,5 @@ curl -X POST \
   }
 ]'
 ```
+
+Next read [Using custom controls](guide-custom-control.md)
