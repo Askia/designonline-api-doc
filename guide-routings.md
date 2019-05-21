@@ -84,10 +84,10 @@ Finally you should provide a `targets` object to the API containing the `questio
 
 For a complete description of all the fields have a look at our [API reference](https://www.askia.com)).
 
-Finally to create the Routings you need two consecutive calls (one for each routing) to :
+Finally to create the Routings you need to call :
 `POST {{url}}/AskiaPortal/Modules/design/api/surveys/{{surveyId}}/routings`
 
-the json payload for the first routing:
+the json payloads for both routings can be concatenated inside an array:
 
 ```
 [
@@ -102,38 +102,31 @@ the json payload for the first routing:
 	"isAfter":true,
 	"isRunIfNotAsked": true,
 	"targets":{"questionId":3}
+  },
+  {
+  "name":"Rule2",
+  "position":0,
+  "startQuestionId":1,
+  "startType":0,
+  "condition":"((gender Has {2}))",
+  "conditionType":1,
+  "actionType":1,
+  "isAfter":true,
+  "isRunIfNotAsked": true,
+  "targets":{"questionId":2}
   }
 ]
 ```
 
 Note that `((gender Has {1}))` is a piece of code in [AskiaScript](www.askia.com) that describes the condition (that is "If gender has a reponseId of 1")
 
-The json payload for the second routing:
-
-```
-[
-  {
-	"name":"Rule2",
-	"position":0,
-	"startQuestionId":1,
-	"startType":0,
-	"condition":"((gender Has {2}))",
-	"conditionType":1,
-	"actionType":1,
-	"isAfter":true,
-	"isRunIfNotAsked": true,
-	"targets":{"questionId":2}
-  }
-]
-```
-
-There are two differences between these two payloads:
+There are two differences between these two routings described as JSON:
 - the condition scripts are not the same as first rule should be triggered when answering **man** to the gender question and the other one **woman**.
 - the targets are different as we want redirections to different questions in the survey based on the answer to the gender question
 
-Making both POST requests will create both of routings and attach them to your survey.
+Making the POST request will create both of routings and attach them to your survey.
 
-The cURL command for the first routing:
+The cURL command for the routings creation:
 
 ```shell
 curl -X POST \
@@ -154,6 +147,18 @@ curl -X POST \
 	"isAfter":true,
 	"isRunIfNotAsked": true,
 	"targets":{"questionId":3}
+  },
+  {
+  "name":"Rule2",
+  "position":0,
+  "startQuestionId":1,
+  "startType":0,
+  "condition":"((gender Has {2}))",
+  "conditionType":1,
+  "actionType":1,
+  "isAfter":true,
+  "isRunIfNotAsked": true,
+  "targets":{"questionId":2}
   }
 ]'
 ```

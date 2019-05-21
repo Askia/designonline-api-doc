@@ -9,6 +9,7 @@
 ## Guides
 - [Creating a simple survey](guide-create-survey.md)
 - [Routings (survey logic)](guide-routings.md)
+- [Using custom controls](guide-custom-control.md)
 - Customizing a survey appearance and controls
 - Loops
 ## API Reference
