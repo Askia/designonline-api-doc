@@ -61,18 +61,18 @@ To set the triggering right you'll have to provide the Routings endpoints with:
  - The `StartQuestionId`
 
  - A `StartType`. One of the followings:
-  - Question
-  - All Questions
-  - Start interview
-  - Restart Interview
-  - End Interview
+ 	- Question
+  	- All Questions
+  	- Start interview
+  	- Restart Interview
+  	- End Interview
 
  - An execution event (represented by booleans in the API) that can be either
-  - isAfter
-  - isBefore
-  - isDuring
-  - isEdits
-  - isRunIfNotAsked
+  	- isAfter
+  	- isBefore
+  	- isDuring
+  	- isEdits
+  	- isRunIfNotAsked
 
 To set a condition you'll have to provide a `ConditionType` which should almost have the value of `1` for "Advanced". The `ConditionType` informs the server about how the condition should be interpreted. As we are creating Routings through the API and not trough DesignOnline Software we need it to be set to Advanced and use [AskiaScript](www.askia.com) to describe our execution condition.
 
