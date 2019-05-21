@@ -41,7 +41,8 @@ Fetching the control list from the API `GET /api/Controls` returns an array of a
     ]
   },
   {...}
-]```
+]
+```
 
 Each control comes with an array of compatible [QuestionTypes](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/79108644-24ea-a2e7-b662-59e882cdf1e3.htm).
 
