@@ -169,7 +169,8 @@ You should get a 200 status code from the server and a full json object represen
   "questionId": 1,
   "style": "",
   "type": 4
-}```
+}
+```
 
 You can now test your survey and confirm that your user input is a dropdown instead of two radio buttons.
 
