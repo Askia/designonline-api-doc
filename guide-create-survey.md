@@ -160,7 +160,7 @@ To create a question call the following route with a POST http method:
 
 with `{{surveyId}}` being the id of the survey the server gave back to you on the survey creation.
 
-You can of course pass in question parameters in the json paylod (for a full list of parameters and explanations have a look at our [API reference](https://www.askia.com)):
+You can of course pass in question parameters in the json paylod (for a full list of parameters and explanations have a look at our [API reference](api-reference-intro.md)):
 
 ```json
 {

@@ -74,7 +74,7 @@ To set the triggering right you'll have to provide the Routings endpoints with:
   	- isEdits
   	- isRunIfNotAsked
 
-To set a condition you'll have to provide a `ConditionType` which should almost have the value of `1` for "Advanced". The `ConditionType` informs the server about how the condition should be interpreted. As we are creating Routings through the API and not trough DesignOnline Software we need it to be set to Advanced and use [AskiaScript](www.askia.com) to describe our execution condition.
+To set a condition you'll have to provide a `ConditionType` which should almost have the value of `1` for "Advanced". The `ConditionType` informs the server about how the condition should be interpreted. As we are creating Routings through the API and not trough DesignOnline Software we need it to be set to Advanced and use [AskiaScript](http://designhelp.askia.com/askiascript2_introduction_to_askiascript_2) to describe our execution condition.
 
 The condition itself will be held in the `Condition` field.
 
@@ -82,7 +82,7 @@ The action resides in the `ActionType` field and it's value has to be set to dep
 
 Finally you should provide a `targets` object to the API containing the `questionId` to which you want your user to be redirected if the condition is met.  
 
-For a complete description of all the fields have a look at our [API reference](https://www.askia.com)).
+For a complete description of all the fields have a look at our [API reference](http://designhelp.askia.com/askiascript2_introduction_to_askiascript_2)).
 
 Finally to create the Routings you need to call :
 `POST {{url}}/AskiaPortal/Modules/design/api/surveys/{{surveyId}}/routings`
@@ -118,7 +118,7 @@ the json payloads for both routings can be concatenated inside an array:
 ]
 ```
 
-Note that `((gender Has {1}))` is a piece of code in [AskiaScript](www.askia.com) that describes the condition (that is "If gender has a reponseId of 1")
+Note that `((gender Has {1}))` is a piece of code in [AskiaScript](api-reference-intro.md) that describes the condition (that is "If gender has a reponseId of 1")
 
 There are two differences between these two routings described as JSON:
 - the condition scripts are not the same as first rule should be triggered when answering **man** to the gender question and the other one **woman**.
