@@ -97,6 +97,8 @@ This endpoint returns the question's element tree as a JSON array:
 
 The id of the UI element we need to alter is 12 as it types is 4 (which is the type of all Control Elements)
 
+## Updating the UI Element with our custom Control
+
 Let's now alter this specific element using the API and passing in the Id of the custom Control we fetched earlier (id : 1)
 
 `PUT /api/Surveys/{surveyId}/Elements/{elementId}`
