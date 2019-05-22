@@ -1,6 +1,6 @@
 # Authentification
 
-All endpoints require auhtentification.
+All endpoints require authentication.
 
 This is a work in progress. The authentification process is going to be revamped soon. For now, in order to authentificate you have to :
 - log in AskiaPortal
