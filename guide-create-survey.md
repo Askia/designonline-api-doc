@@ -70,7 +70,7 @@ The server returns your newly created survey with the data provided. All other s
         "display_progress_value": "yes",
         "sticky_header": "no",
         "radio_checkbox_size": "1.5rem",
-        "ribbon_footer_background_color": "{%= Theme.PrimaryColor %}",
+        "ribbon_footer_background_color": "{}",
         "buttons_alignement": "center",
         "display_previous": "yes",
         "previous_caption": "Previous",
