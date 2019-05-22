@@ -89,7 +89,7 @@ server's response:
         "display_progress_value": "yes",
         "sticky_header": "no",
         "radio_checkbox_size": "1.5rem",
-        "ribbon_footer_background_color": "{%= Theme.PrimaryColor %}",
+        "ribbon_footer_background_color": "{}",
         "buttons_alignement": "center",
         "display_previous": "yes",
         "previous_caption": "Previous",
