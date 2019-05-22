@@ -1,16 +1,17 @@
 # Creating a simple survey
 
-This guide is assuming you have at least some experience with interacting with a REST api and that you already had a look at the [Authentification section of this document](intro-authentification.md)
+This guide assumes that you have at least some experience with interacting with a REST API and that you have already read through the [Authentication section of this document](intro-authentification.md)
+
+Note that all endpoints are rooted at `{{url}}`, which is the base url of the server on which your Design Online web application is running. For example, `https://alpha.askia.com`.
 
 ## Creating a survey
 
-The easiest way to create a survey is to use a blank survey template. Predefined survey templates can be fetched through the SurveyTemplate Route.
+The easiest way to create a survey is to use a blank survey template. Predefined survey templates can be fetched through the `SurveyTemplate` endpoint.
 
 ```
 {{url}}/AskiaPortal/Modules/design/api/SurveyTemplates
-
 ```
-The server will return a list of existing SurveyTemplates
+The server will return a list of existing `SurveyTemplate` objects
 ```json
 [
     {
@@ -23,24 +24,24 @@ The server will return a list of existing SurveyTemplates
 ]
 ```
 
-We'll use the one and only predefined template of the list (the one with id = 1).
-Let's now create our first survey using this handy endpoint which we will call using a POST http method:
+We'll use the one and only predefined template of the list (the one with `id` = 1).
+
+Let's now create our first survey by making a HTTP POST request to this endpoint:
 
 ```
 POST {{url}}/AskiaPortal/Modules/design/api/Surveys/FromSurveyTemplate/{{survey_template_id}}
 ```
 
-`{{url}}` being the base url of your design online server instance.
-
-In our scenario survey_template_id is 1 and the only input data we need to provide (in the request body) for now is the survey name. The request body:
+In our scenario the value of `survey_template_id` is `1` and the only data we will provide in the request body is the survey name. The request body:
 
 ```json
 {
-	"name": "FirstSurvey"
+  "name": "FirstSurvey"
 }
 ```
-Make sure to choose a survey name that is unique through the platform.  
-Because we are passing the body as a json payload we have to let the server know about it. Just pass the`Content-Type: application/json` header to your request.
+_Note: make sure to choose a survey name that is unique on the platform._
+
+Because we are passing the body as JSON we have to let the server know about it. Just include the header `Content-Type: application/json` in your request.
 
 The complete request can be called using cURL:
 
@@ -49,12 +50,10 @@ curl -X POST \
   https://alpha.askia.com/AskiaPortal/Modules/design/api/Surveys/FromSurveyTemplate/1 \
   -H 'Content-Type: application/json' \
   -H 'cookie: whatever_cookie_value_you_have' \
-  -d '{
-	"name": "FirstSurvey"
-}'
+  -d '{ "name": "FirstSurvey" }'
 ```
 
-The server returns your newly created survey with the data provided. All other survey properties will be set to defaults values:
+The server returns the newly created survey. All survey properties will be set to default values specified in the survey template:
 
 ```json
 {
@@ -113,24 +112,24 @@ The server returns your newly created survey with the data provided. All other s
 }
 ```
 
-## Providing more survey parameters  
+## Providing more properties on survey creation 
 
-When creating a survey you can pass in more survey data. In  this example we'll provide a json payload with some extra parameters:
+When creating a survey you can pass in more survey properties. In  this example we'll provide a JSON payload with some extra properties:
 
 ```json
 {
   "name": "SurveyWithMoreAttributes",
-	"description": "cool survey",
-	"languages": [1036],
-	"themeProperties": {
-	  "borderWidth": "1px",
-    	  "borderRadius": "0.1875em",
-	  "errorColor": "255,255,102"
-	}
+  "description": "cool survey",
+  "languages": [1036],
+  "themeProperties": {
+    "borderWidth": "1px",
+    "borderRadius": "0.1875em",
+    "errorColor": "255,255,102"
+  }
 }
 ```
 
-In this example we are creating a new survey with a description, a language set to French and some default theme properties.
+In this example we are creating a new survey with a description, a language set to French and some values for certain properties of the survey's theme.
 
 The complete cURL command:
 ```shell
@@ -146,36 +145,40 @@ curl -X POST \
 	  "borderWidth": "1px",
           "borderRadius": "0.1875em",
 	  "errorColor": "255,255,102"
-	}
+  }
 }'
 ```
 
-## Adding questions to the survey
+## Adding questions to a survey
 Once a survey is created you can add questions and responses in a few steps.
 
-To create a question call the following route with a POST http method:
+To create a question, call the following endpoint with a POST HTTP request:
 ```
 {{url}}/AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/New
 ```
 
-with `{{surveyId}}` being the id of the survey the server gave back to you on the survey creation.
+where `{{surveyId}}` is the value of the `id` property of the survey in the earlier response.
 
-You can of course pass in question parameters in the json paylod (for a full list of parameters and explanations have a look at our [API reference](api-reference-intro.md)):
+You can of course pass in question properties in the JSON request. For a full list of properties and an explanation of their meaning and acceptable values, have a look at our [API reference](api-reference-intro.md)):
 
 ```json
 {
   "allowsNoResponse": false,
   "mainCaption": "Are you a man or a woman <img src=\"https://www.jquery-az.com/html/images/banana.jpg\" height=\"42\" width=\"42\"/>",
   "rotationType": 2,
-  "shortcut": "q1",
+  "shortcut": "q1_gender",
   "type": 1
 }
 ```
-With this payload we ask the server to create a mandatory question (by providing a false value to `allowsNoResponse`) of `type` 1 (stands for single answer).
-The `rotationType` of the question is set to 2 and this stands for (Circular Rotation).
-The `shortcut` is a handy unique identifier you can provide and the `mainCaption`is the full text of the question.
+With this request we are asking the server to create a question with the following properties: 
 
-Note that the `mainCaption`is a plain html text field and you can reference any external or internal images like in any html content.
+* The respondent must answer the question (by providing a value of `false` to `allowsNoResponse`) 
+* The question is a closed question of which only one response can be chosen (by providing a value of `1` for `type` which is is the value for a closed question that allows only one response).
+* The `rotationType` of the question is set to `2` and this stands for 'circular rotation'.
+* There is a unique identifier - 'shortcut' - of `q1_gender`
+* The full text of the question when presented to the respondent is formatted with HTML by setting the value of the `mainCaption`
+
+Note that the `mainCaption`is a plain HTML text field and you can reference any external or internal images as in any other HTML content.
 
 Here is the cURL request:
 ```shell
@@ -191,7 +194,7 @@ curl -X POST \
   "type": 1
 }'
 ```
-the server's response should have a 200 status code with the newly created Question object.
+the server's response should have a HTTP `200` status code with the newly created question object.
 ```json
 {
     "allowsNoResponse": false,
@@ -273,16 +276,15 @@ curl -X POST \
 ```
 
 ## Adding responses  
-At this point if you fetch the list of questions for your survey you'll receive a JSON array of three questions.
-Let's add two responses for Question 1.
+At this point if you fetch the list of questions for your survey you'll receive a JSON array of three questions. Let's add two responses for the first question, to which we gave the shortcut `q1_gender`.
 
-We will be calling the following endpoint providing the available responses in the body:
+We will be calling the following endpoint to the responses in the body:
 ```
 POST AskiaPortal/Modules/design/api/Surveys/{{surveyId}}/Questions/{{question_id}}/Responses
 ```
-`question_id` is of course the id of the question returned by the server at the creation stage.
+`question_id` is of course the `id` of the question returned by the server when it was created.
 
-the json payload is pretty straightforward on this one:
+The JSON content is straightforward:
 ```json
 [
   {
@@ -294,7 +296,7 @@ the json payload is pretty straightforward on this one:
 ]
 ```
 
-If you get a 200 status code and the following json (which is an array of Response objects) you're all good.
+If you receive a `200` status code and the following JSON (which is an array of response objects), everything has worked as expected.
 ```json
 [
     {
@@ -346,6 +348,6 @@ If you get a 200 status code and the following json (which is an array of Respon
 ]
 ```
 
-You've now finished this tutorial on how to create basic questions and answers. Feel free to play with the API and experiment with other parameters to pass in your questions and responses requests. At any point you can call the test endpoint `/api/Test/Survey/{surveyId}` and have a test view of your survey.
+You've now finished this tutorial on how to create basic questions and answers. Feel free to play with the API and experiment with other properties to pass in your questions and responses requests. At any point you can call the test endpoint `{{url}}/AskiaPortal/Modules/design/api/Test/Survey/{surveyId}` in a browser and have a test view of your survey.
 
 Next read our [Routings Guide](guide-routings.md)
