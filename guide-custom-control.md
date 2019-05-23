@@ -1,4 +1,4 @@
-# Using custom controls
+# Using an ADC (custom controls)
 
 This guide is assuming you have at least some experience with interacting with a REST api and that you already had a look at the [Authentification section of this document](intro-authentification.md)
 
