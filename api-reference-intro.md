@@ -1,10 +1,10 @@
 # API Reference
 
-**You'll find the exhaustive list of our API for the Design Online API in the [Swagger api documentation](https://alpha.askia.com/AskiaPortal/Modules/design/swagger/ui/index).**
+**You'll find the exhaustive list of Design Online API endpoints in its [Swagger API documentation](https://alpha.askia.com/AskiaPortal/Modules/design/swagger/ui/index).**
 
-Not every parameter is described in the Swagger documentation yet as this API is a work in progress and uses some [internal libraries](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/af8e166d-3ebe-d4b8-3d83-b0cbea7fb556.htm).
+Note that not every parameter is described in the Swagger documentation, yet. This is because the API is still a work in progress. Some further information can be found in the [AskiaCore documentation](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/af8e166d-3ebe-d4b8-3d83-b0cbea7fb556.htm).
 
-Here some detailed description of the most used (and missing from the documentation) types:
+Below are some detailed description of the most frequently used types that are missing from the Design Online API documentation:
 
 ## Routings
 - [RoutingStartType](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/345ce731-0db6-3cfa-d462-640781e5cd6b.htm)
@@ -17,4 +17,4 @@ Here some detailed description of the most used (and missing from the documentat
 ## Scenarios
 - [EntityType](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/dbf519b6-c048-c320-eec7-854704b7a14d.htm)
 
-We are actively working on this document to provide you with a single information source point meanwhile in order to have a complete list of the enumerations have a look to our [AskiaCore Documentation](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/af8e166d-3ebe-d4b8-3d83-b0cbea7fb556.htm#enumeration) in the Enumeration section.
+We are actively working on this document to provide you with a single information source point; meanwhile, in order to have a complete list of the enumerated values, please refer to the [AskiaCore Documentation](http://installers.askia.com/helpdesk/devs/AskiaCoreDoc/html/af8e166d-3ebe-d4b8-3d83-b0cbea7fb556.htm).
