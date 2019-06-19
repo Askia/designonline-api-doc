@@ -25,6 +25,7 @@ The body should be :
 ```
 
 This call will return a session token for this user.
+Note that this token can expire: The default expiration period is set to 120min.
 
 From this point any further authenticated call should include the apiKey as a query string as in:
 `POST {{url}}/AskiaPortal/Modules/design/api/Surveys/New?apikey={your_api_key}`
