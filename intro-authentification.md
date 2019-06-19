@@ -2,13 +2,13 @@
 
 All endpoints require authentication.
 
-This is a work in progress. The authentification process is going to be altered soon. For now, in order to authenticate you first have to establish a session with AskiaPortal:
+This API support two approach to create an authenticated user session:
 
-1. Sign into AskiaPortal on the server that you will target (e.g. https://alpha.askia.com/askiaportal/SignIn)
-2. Open the developer tools provided by your browser
-3. Locate the cookie created by AskiaPortal when you signed in; note that the cookie has the name `askiaportal-sessionkey`
+Using cookie
+The easiest way is to use the Sign-In page of AskiaPortal to authenticate the user.
 
-![cookie](https://github.com/Askia/designonline-api-doc/blob/master/assets/doc-cookie.png)
+Using the application API key
+Fill the apiKey input above with your application API key.
+Use the [Session (Post)] (https://alpha.askia.com/AskiaPortal/Modules/design/swagger/ui/index#!/Session/Session_Post) endpoint to generate a session key.
 
-4. Copy the value of this cookie
-5. For all requests made to the API, include a HTTP header with the key `Cookie` and the value set to the text you copied from the cookie
+The apiKey is a parameter in the request URL (query string) of all endpoints (<url_to_end_point>?apiKey=<your_api_key>), the askiaportal-session is an HTTP header of all endpoints (askiaportal-session=<your_session_key>)
