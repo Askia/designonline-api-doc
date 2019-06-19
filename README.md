@@ -22,3 +22,8 @@
 ## API Reference
 
 - [The complete description of the resources, endpoints, parameters and returned objects](api-reference-intro.md)
+
+
+## Release notes
+
+- [19/06/2019](release-notes-19062019.md)
