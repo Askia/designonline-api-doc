@@ -26,4 +26,4 @@
 
 ## Release notes
 
-- [19/06/2019](release-notes-19062019.md)
+- [19/06/2019](rnotes/release-notes-19062019.md)
