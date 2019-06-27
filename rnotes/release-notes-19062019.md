@@ -12,7 +12,7 @@ Both of them should be passed to requests you make to the API.
 
 To create a user session token call the following endpoint:
 
-`POST {{url}}/AskiaPortal/Modules/design/api/Session?apikey={{your_api_key}}``
+`POST {{url}}/AskiaPortal/Modules/design/api/Session?apikey={{your_api_key}}`
 
 This call will authenticate a specific user to the system and grant it with access to the whole API.
 The body should be :
