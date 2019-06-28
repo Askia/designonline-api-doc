@@ -53,6 +53,10 @@ Pass an `Authorization` header on the request with the value: `Basic {token}`
 **Please contact us to get a valid token**
 
 
+Once your survey is online you can simply start an interview by using for example the DoExternalPanel link:
+
+`{{fieldURl}}/WebProd/cgi-bin/askiaext.dll?Action=DoExternalPanel&SurveyName={{your_surveyName}}&Broker={your_broker_name}&BrokerPanelId={your_broker_panel_id}`
+
 # Known blocking issues
 
 ## Phantom objects
