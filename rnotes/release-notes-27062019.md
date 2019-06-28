@@ -59,6 +59,9 @@ Once your survey is online you can simply start an interview by using for exampl
 
 # Known blocking issues
 
+## Survey Look & Feel in production
+When the survey is published and set online, it will loose it's html assets path and therefor its look and feel is broken.
+
 ## Phantom objects
  - Sometimes objects like Responses are visibles in the web interface but not on the test link (and they disappear from the web interface if you recycle the app in IIS)
 
