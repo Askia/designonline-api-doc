@@ -27,3 +27,4 @@
 ## Release notes
 
 - [19/06/2019](rnotes/release-notes-19062019.md)
+- [27/06/2019](rnotes/release-notes-27062019.md)
