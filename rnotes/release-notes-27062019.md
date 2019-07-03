@@ -53,7 +53,14 @@ Pass an `Authorization` header on the request with the value: `Basic {token}`
 **Please contact us to get a valid token**
 
 
+Once your survey is online you can simply start an interview by using for example the DoExternalPanel link:
+
+`{{fieldURl}}/WebProd/cgi-bin/askiaext.dll?Action=DoExternalPanel&SurveyName={{your_surveyName}}&Broker={your_broker_name}&BrokerPanelId={your_broker_panel_id}`
+
 # Known blocking issues
+
+## Survey Look & Feel in production
+When the survey is published and set online, it will loose it's html assets path and therefor its look and feel is broken.
 
 ## Phantom objects
  - Sometimes objects like Responses are visibles in the web interface but not on the test link (and they disappear from the web interface if you recycle the app in IIS)
