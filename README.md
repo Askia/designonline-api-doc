@@ -30,3 +30,4 @@
 - [27/06/2019](rnotes/release-notes-27062019.md)
 - [03/07/2019](rnotes/release-notes-03072019.md)
 - [11/07/2019](rnotes/release-notes-11072019.md)
+- [01/08/2019](rnotes/release-notes-01082019.md)
