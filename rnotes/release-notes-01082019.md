@@ -48,7 +48,8 @@ The numeric error message is now dynamic and displays the min/max allowed values
 
 ## Option to disable the browser validation for numerics
 You can now disable the browser validation of numeric inputs by setting the `useBrowserValidation` extension property to 0 on the TemplateAll ADC.
-you can do that either by calling a PUT method on the ADC Element of a specific question or use the defaultControl feature we have in DesignOnline. You can set defaultControls when creating a survey. Just provide the following `defaultControls` object into your json payload:
+You can do that either by calling a PUT method on the ADC Element of a specific question or by using the Default Controls feature we have in Design Online. 
+The defaultControls can be set when creating a survey. Just provide the following `defaultControls` object into your json payload:
 
 `POST {{url}}/AskiaPortal/Modules/design/api/Surveys/New?apiKey={{apiKey}}`
 
@@ -71,7 +72,7 @@ In the `defaultControls` object `3` is the type of the question for which you wa
 `controlId` is the id of the ADC. `1` stands for TemplateAll.
 
 Finally we also provide a default value `0` to the `useBrowserValidation` property for this ADC.
-
+In this example, from now on all numerics will use the TemplateAll ADC by default with this useBrowserValidation set to 0.
 
 # Known issues
 
