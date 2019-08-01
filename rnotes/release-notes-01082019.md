@@ -66,8 +66,10 @@ you can do that either by calling a PUT method on the ADC Element of a specific 
 }
 ```
 
-In the `defaultControls` object `3` is the type of the question for which you want to provide a default control. `3` stands is for numeric.
+In the `defaultControls` object `3` is the type of the question for which you want to provide a default control. `3` stands for numeric.
+
 `controlId` is the id of the ADC. `1` stands for TemplateAll.
+
 Finally we also provide a default value `0` to the `useBrowserValidation` property for this ADC.
 
 
