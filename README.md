@@ -6,6 +6,7 @@
 - [Authentification](intro-authentification.md)
 - [Errors and error handling](intro-error.md)
 
+
 ## Quick start
 
 - Authentification (Authentification is a work in progress in DO API, please refer to [authentification introduction](intro-authentification.md))
@@ -16,6 +17,7 @@
 - [Creating a simple survey](guide-create-survey.md)
 - [Routings (survey logic)](guide-routings.md)
 - [Using an ADC (Custom Control)](guide-custom-control.md)
+- [ExtendedQuestions] (extended-questions.md)
 - Customizing a survey appearance
 - Creating question Loops
 
