@@ -123,7 +123,7 @@ Or you can get one specific question GET api/Surveys/2/ExtendedQuesions/22
 }
 ```
 
-#Update
+# Update
 
 **Request input**
 
@@ -160,9 +160,9 @@ Updated responses will not be moved.
   ]
 }
 ```
-```json
-Response output
+**Response output**
 
+```json
 {
     "id":22,
     "type":1,
