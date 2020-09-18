@@ -1,8 +1,8 @@
-** Read
+# Read
 
-You can get all questions GET api/Surveys/2/ExtendedQuesions
+GET api/Surveys/2/ExtendedQuesions
 
-Response output
+**Response output**
 
 ```json
 [
@@ -12,28 +12,33 @@ Response output
       "controlId":31,
       "controlProperties":{
          "controlAlign":"left",
-         ...andTheOtherControlProperties
+         ...
+         andTheOtherControlProperties
       },
       "responses":[
          {
             "id":67,
             "mainCaption":"male",
-            ...andTheOtherResponseProperties
+            ...
+            andTheOtherResponseProperties
          },
          {
             "id":68,
             "mainCaption":"female",
-            ...andTheOtherResponseProperties
+            ...
+            andTheOtherResponseProperties
          }
       ],
-      ...andTheOtherQuestionProperties
+      ...
+      andTheOtherQuestionProperties
   }
 ]
 ```
 
 Or you can get one specific question GET api/Surveys/2/ExtendedQuesions/22
 
-Response output
+**Response output**
+
 ```json
   {
       "id":22,
@@ -41,27 +46,35 @@ Response output
       "controlId":31,
       "controlProperties":{
          "controlAlign":"left",
-         ...andTheOtherControlProperties
+         ...
+         andTheOtherControlProperties
       },
       "responses":[
          {
             "id":67,
             "mainCaption":"male",
-            ...andTheOtherResponseProperties
+            ...
+            andTheOtherResponseProperties
          },
          {
             "id":68,
             "mainCaption":"female",
-            ...andTheOtherResponseProperties
+            ...
+            andTheOtherResponseProperties
          }
       ],
-      ...andTheOtherQuestionProperties
+      ...
+      andTheOtherQuestionProperties
   }
-```json
-Create
-Request input
+```
+
+# Create
+
+**Request input** 
 
 // POST api/Surveys/2/ExtendedQuesions/New
+```json
+
 {
   "shortcut": "gender",
   "type": 1,
@@ -78,38 +91,50 @@ Request input
     }
   ]
 }
-Response output
+```
+**Response output**
 
+```json
 {
     "id":22,
     "type":1,
     "controlId":31,
     "controlProperties":{
        "controlAlign":"left",
-       ...andTheOtherControlProperties
+       ...
+       andTheOtherControlProperties
     },
     "responses":[
        {
           "id":67,
           "mainCaption":"male",
-          ...andTheOtherResponseProperties
+          ...
+          andTheOtherResponseProperties
        },
        {
           "id":68,
           "mainCaption":"female",
-          ...andTheOtherResponseProperties
+          ...
+          andTheOtherResponseProperties
        }
     ],
-    ...andTheOtherQuestionProperties
+    ...
+    andTheOtherQuestionProperties
 }
-Update
-Request input
+```
+
+#Update
+
+**Request input**
 
 NOTE: The response field does not handle the response ordering.
 Created responses are added at the end of the list of existing responses.
 Updated responses will not be moved.
 
+
 // PUT api/Surveys/2/ExtendedQuesions/22
+
+```json
 {
   "shortcut": "gender renamed",
   "type": 1,
@@ -134,6 +159,8 @@ Updated responses will not be moved.
     },
   ]
 }
+```
+```json
 Response output
 
 {
@@ -142,19 +169,24 @@ Response output
     "controlId":31,
     "controlProperties":{
        "controlAlign":"left",
-       ...andTheOtherControlProperties
+       ...
+       andTheOtherControlProperties
     },
     "responses":[
        {
           "id": 67,
           "mainCaption":"response renamed",
-          ...andTheOtherResponseProperties
+          ...
+          andTheOtherResponseProperties
        },
        {
          "id": 69,
          "mainCaption": "other",
-          ...andTheOtherResponseProperties
+          ...
+          andTheOtherResponseProperties
        }
     ],
-    ...andTheOtherQuestionProperties
+    ...
+    andTheOtherQuestionProperties
 }
+```
